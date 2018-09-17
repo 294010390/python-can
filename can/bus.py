@@ -331,6 +331,9 @@ class BusABC(object):
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.shutdown()
 
+    def __del__(self):
+        self.shutdown()
+
     @property
     def state(self):
         """
